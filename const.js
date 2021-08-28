@@ -1,5 +1,15 @@
-const resUrl = 'http://192.168.2.13:8081'
-const mp3FilePath = 'D:/1-upup/web/myself-note/Ebook-app/work-resource/mp3'
+const env = require('eve')
+
+let resUrl
+let mp3FilePath
+if (env === 'dev') {
+  resUrl = 'http://192.168.2.13:8081'
+  mp3FilePath = 'D:/1-upup/web/myself-note/Ebook-app/work-resource/mp3'
+} else if (env === 'prod') {
+  resUrl = 'http://47.113.230.136'
+  mp3FilePath = '/root/nginx/upload/mp3'
+}
+
 
 const category = [
   'Biomedicine',
